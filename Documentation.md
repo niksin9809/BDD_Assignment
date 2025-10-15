@@ -40,6 +40,7 @@ Following is a table showing the mean average precision of the models on validat
 |Baseline (occluded instance in training)| 0.7467| 0.5534|
 |Model without Occluded Instances | 0.6017 | 0.7178|
 |Class agnostic model | 0.6628 | 0.7921 |
+|------|------|-------|
 **Conclusions from the scores table**
 First model performs well on data that has occluded and truncated instances but not as good on the data without the occluded and truncated instances. Other two models outperform the first model in that aspect. This can be mainly attributed to the differences in the training datasets of the models, with the first model being trained on the occluded and truncated instances while the other two are not.
 Another thing to note here is that, model performance increases when model is made class agnostic as can be seen from the comparison of the second and the third model. 
