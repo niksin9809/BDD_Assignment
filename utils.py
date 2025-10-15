@@ -13,8 +13,8 @@ from pathlib import Path
 def load_data(file_path):
     '''
     Loads JSON data from the specified file path and returns it as a Python object.
-    input: file_path (str): Path to the JSON file.
-    output: annots (list): List of annotations loaded from the JSON file.
+    input: file_path (str)- Path to the JSON file.
+    output: annots (list)- List of annotations loaded from the JSON file.
     '''
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"The file {file_path} does not exist.")
@@ -26,8 +26,8 @@ def load_data(file_path):
 def create_base_df(annots):
     '''
     Creates a base DataFrame from the annotations list.
-    input: annots (list): List of annotations loaded from the JSON file.
-    output: base_df (DataFrame): DataFrame containing image-level information.
+    input: annots (list)- List of annotations loaded from the JSON file.
+    output: base_df (DataFrame)- DataFrame containing image-level information.
     '''
     base_data = []
     for annot in annots:
@@ -45,8 +45,8 @@ def create_base_df(annots):
 def create_instance_df(annots):
     '''
     Creates a DataFrame containing instance-level annotations from the provided annotations.
-    input: annots (list): List of annotations loaded from the JSON file.
-    output: instance_df (DataFrame): DataFrame containing instance-level annotations.
+    input: annots (list)- List of annotations loaded from the JSON file.
+    output: instance_df (DataFrame)- DataFrame containing instance-level annotations.
     '''
     instance_data = []
     for annot in annots:
@@ -77,14 +77,14 @@ def create_instance_df(annots):
 def draw_count_plot(df, column, title, xlabel, ylabel='Count', axes=None, hue = None):
     '''
     Draws a count plot for the specified column in the DataFrame.
-    input: df (DataFrame): DataFrame containing the data.
-           column (str): Column name to plot.
-           title (str): Title of the plot.
-           xlabel (str): Label for the x-axis.
-           ylabel (str): Label for the y-axis.
-           axes (matplotlib.axes.Axes): Axes object to plot on. If None, creates a new figure.
-           rotation (int): Rotation angle for x-axis labels.
-    output: axes (matplotlib.axes.Axes): Axes object with the plot.
+    input: df (DataFrame)- DataFrame containing the data.
+           column (str)- Column name to plot.
+           title (str)- Title of the plot.
+           xlabel (str)- Label for the x-axis.
+           ylabel (str)- Label for the y-axis.
+           axes (matplotlib.axes.Axes)- Axes object to plot on. If None, creates a new figure.
+           rotation (int)- Rotation angle for x-axis labels.
+    output: axes (matplotlib.axes.Axes)- Axes object with the plot.
     '''
     sns.countplot(data=df, x=column, hue=hue, order=df[column].value_counts().index, ax=axes)
     axes.set_title(title)
@@ -95,14 +95,14 @@ def draw_count_plot(df, column, title, xlabel, ylabel='Count', axes=None, hue = 
 def draw_hist_plot(df, column, title, xlabel, ylabel='Frequency', axes=None, bins=30):
     '''
     Draws a histogram for the specified column in the DataFrame.
-    input: df (DataFrame): DataFrame containing the data.
-           column (str): Column name to plot.
-           title (str): Title of the plot.
-           xlabel (str): Label for the x-axis.
-           ylabel (str): Label for the y-axis.
-           axes (matplotlib.axes.Axes): Axes object to plot on. If None, creates a new figure.
-           bins (int): Number of bins for the histogram.
-    output: axes (matplotlib.axes.Axes): Axes object with the plot.
+    input: df (DataFrame)- DataFrame containing the data.
+           column (str)- Column name to plot.
+           title (str)- Title of the plot.
+           xlabel (str)- Label for the x-axis.
+           ylabel (str)- Label for the y-axis.
+           axes (matplotlib.axes.Axes)- Axes object to plot on. If None, creates a new figure.
+           bins (int)- Number of bins for the histogram.
+    output: axes (matplotlib.axes.Axes)- Axes object with the plot.
     '''
     sns.histplot(data=df, x=column, bins=bins, ax=axes)
     axes.set_title(title)

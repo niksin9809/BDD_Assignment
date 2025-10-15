@@ -1,0 +1,6 @@
+train: /home/nikhils/Desktop/object_detection_testing/YOLO_Data/train
+val: /home/nikhils/Desktop/object_detection_testing/YOLO_Data/val
+
+nc: 10
+
+names: ['traffic light', 'traffic sign', 'car', 'person', 'bus', 'truck', 'rider', 'bike', 'motor', 'train']

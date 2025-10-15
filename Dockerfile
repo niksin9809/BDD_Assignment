@@ -5,9 +5,6 @@ FROM pytorch/pytorch:2.3.1-cuda12.1-cudnn8-runtime
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the requirements file into the container at /app
-COPY requirements.txt .
-
 # Install the Python dependencies
 # --no-cache-dir reduces the image size
 RUN pip install --no-cache-dir -r requirements.txt
