@@ -36,6 +36,7 @@ Splitting the dataset for static and moving items in the frame and training sepa
 For quantifying the model performance, we can take the mAP on the validation set along with a confusion matrix for all the classes. This can be used to compare various models and approaches. The **model_evaluation.ipynb** provides detailed comparison across these metrics of each model as well as the code to perform all the analysis based on different categories in the datast.
 Following is a table showing the mean average precision of the models on validation dataset in two conditions, one when including occluded and truncated instances and second without it.
 |Model/Val Type | Occluded and Truncated Included | Occluded and Truncated not Included |
+|-----------|------|-----|
 |Baseline (occluded instance in training)| 0.7467| 0.5534|
 |Model without Occluded Instances | 0.6017 | 0.7178|
 |Class agnostic model | 0.6628 | 0.7921 |
